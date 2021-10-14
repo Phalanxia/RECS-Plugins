@@ -87,4 +87,9 @@ function componentMaid:componentAdded(core, entityId, componentInstance)
 	componentInstance._maid = Maid.new()
 end
 
+function componentMaid:componentRemoving(core, entityId, componentInstance)
+	componentInstance._maid:destroy()
+	componentInstance._maid = nil
+end
+
 return componentMaid
